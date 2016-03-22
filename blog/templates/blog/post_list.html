@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Nevesins</title>
-    <p>Hi there!</p>
-    <p>It works!!</p>
-    <em>siddhant</em>
-    <strong>Narang</strong>
 </head>
 <body>
+    <div>
+        <h1><a href="">NevesinS</a></h1>
+    </div>
+    {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+    {% endfor %}
 </body>
 </html>
