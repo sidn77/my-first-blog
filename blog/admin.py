@@ -1,5 +1,7 @@
-from django.contrib import admin
-from .models import Post
-# Register your models here
+from django.conf.urls import include, url
+from . import views
 
-admin.site.register(Post)
+urlpatterns = [
+    url(r'^$', views.post_list, name='post_list'),
+    url(r'^post/(?P<post_id>\d+)/$', views.post_detail, name='post_detail'),
+]
